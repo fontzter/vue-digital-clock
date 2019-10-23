@@ -43,7 +43,7 @@ const getHour = twelveHour => {
   if (twelveHour && hours > 12) {
     hours = hours - 12;
   }
-  return padZero(hours);
+  return hours;
 };
 
 const getAmPm = () => (getDate().getHours() > 12 ? "pm" : "am");
