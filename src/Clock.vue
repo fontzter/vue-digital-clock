@@ -21,7 +21,7 @@
     ><!--
     --><span v-if="displaySeconds" class="clock__seconds">{{ seconds }}</span
     ><!--
-    --><span v-if="twelveHour" class="clock__ampm">{{ amPm }}</span>
+    --><span v-if="twelveHour && displayAmPm" class="clock__ampm">{{ amPm }}</span>
   </time>
 </template>
 <script>
@@ -51,7 +51,7 @@ const getAmPm = () => (getDate().getHours() > 12 ? "pm" : "am");
 export default {
   name: "vue-digital-clock",
 
-  props: ["blink", "displaySeconds", "twelveHour"],
+  props: ["blink", "displayAmPm", "displaySeconds", "twelveHour"],
 
   data() {
     return {
